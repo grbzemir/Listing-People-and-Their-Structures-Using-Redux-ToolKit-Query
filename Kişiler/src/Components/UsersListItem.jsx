@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types'; // Import prop-types library
+import PropTypes from 'prop-types'; // Import PropTypes
 import AlbumList from './AlbumList';
 import ExpandablePanel from './ExpandablePanel';
 import { GoTrashcan } from 'react-icons/go';
-import { useRemoveUserMutation } from '../Store';
+import { useRemoveUserMutation } from '../store';
 import CircularProgress from '@mui/material/CircularProgress';
 
 function UsersListItem({ user }) {
@@ -40,7 +40,7 @@ function UsersListItem({ user }) {
 }
 
 UsersListItem.propTypes = {
-    user: PropTypes.object.isRequired, // Add prop type validation for 'user' prop
+    user: PropTypes.object.isRequired, // Add prop type validation for 'user'
 };
 
 export default UsersListItem;

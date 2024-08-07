@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFetchUsersQuery, useAddUserMutation } from '../Store/Apis/UsersApi';
+import { useFetchUsersQuery, useAddUserMutation } from '../store';
 import Skeleton from '@mui/material/Skeleton';
 import UsersListItem from './UsersListItem';
 import Button from '@mui/material/Button';
@@ -42,4 +42,3 @@ function UsersList() {
 }
 
 export default UsersList;
-
