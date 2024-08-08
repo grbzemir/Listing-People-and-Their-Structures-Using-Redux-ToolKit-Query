@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFetchUsersQuery, useAddUserMutation } from '../store';
+import { useFetchUsersQuery, useAddUserMutation } from '../Store';
 import Skeleton from '@mui/material/Skeleton';
 import UsersListItem from './UsersListItem';
 import Button from '@mui/material/Button';
