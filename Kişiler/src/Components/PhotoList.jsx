@@ -1,19 +1,17 @@
 import React from 'react';
-// Remove the duplicate import statement
-import { useAddAlbumMutation, useFetchAlbumsQuery } from '../store';
+import PropTypes from 'prop-types'; // Import PropTypes library
+import { useAddPhotoMutation, useFetchPhotosQuery } from '../store';
+import PhotoListItem from './PhotoListItem';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import Skeleton from '@mui/material/Skeleton';
-import AlbumListItem from './AlbumListItem';
-import PropTypes from 'prop-types';
 
+function PhotoList({ album }) {
+    const { data, isError, isFetching } = useFetchPhotosQuery(album);
+    const [addPhoto, results] = useAddPhotoMutation();
 
-function AlbumList({ user }) {
-    const { data, isError, isFetching } = useFetchAlbumsQuery(user);
-    const [addAlbum, results] = useAddAlbumMutation();
-
-    const handleAlbumAdd = () => {
-        addAlbum(user);
+    const handlePhotoAdd = () => {
+        addPhoto(album);
     };
 
     let content;
@@ -24,8 +22,8 @@ function AlbumList({ user }) {
     } else if (isError) {
         content = <div>Hata Var</div>;
     } else {
-        content = data.map((album) => {
-            return <AlbumListItem key={album.id} album={album} />;
+        content = data.map((photo) => {
+            return <PhotoListItem key={photo.id} photo={photo} />;
         });
     }
 
@@ -33,12 +31,12 @@ function AlbumList({ user }) {
         <>
             <div>
                 <div className="topArrangement">
-                    <h3>{user.name} Albümü</h3>
-                    <Button variant="outlined" onClick={handleAlbumAdd}>
+                    <h3>{album.title} Fotoları</h3>
+                    <Button variant="outlined" onClick={handlePhotoAdd}>
                         {results.isLoading ? (
                             <CircularProgress />
                         ) : (
-                            <span> Albüm Ekle+</span>
+                            <span> Foto Ekle+</span>
                         )}
                     </Button>
                 </div>
@@ -48,8 +46,8 @@ function AlbumList({ user }) {
     );
 }
 
-AlbumList.propTypes = {
-    user: PropTypes.object.isRequired,
+PhotoList.propTypes = {
+    album: PropTypes.object.isRequired, // Add prop type validation for 'album' prop
 };
 
-export default AlbumList;
+export default PhotoList;
