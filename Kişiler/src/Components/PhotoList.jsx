@@ -41,10 +41,11 @@ function PhotoList({ album }) {
                     </Button>
                 </div>
             </div>
-            <div>{content}</div>
+            <div className="fotoDiv">{content}</div>
         </>
     );
 }
+
 
 PhotoList.propTypes = {
     album: PropTypes.object.isRequired, // Add prop type validation for 'album' prop

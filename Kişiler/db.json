@@ -17,11 +17,6 @@
     },
     {
       "userId": 3,
-      "title": "Gorgeous Steel Mouse",
-      "id": 16
-    },
-    {
-      "userId": 3,
       "title": "Oriental Rubber Bacon",
       "id": 21
     },
@@ -52,8 +47,15 @@
     },
     {
       "userId": 3,
-      "title": "Rustic Concrete Bacon",
+      "title": "Licensed Wooden Pants",
       "id": 27
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 15,
+      "url": "https://loremflickr.com/150/150/abstract?lock=20625",
+      "id": 1
     }
   ]
 }
