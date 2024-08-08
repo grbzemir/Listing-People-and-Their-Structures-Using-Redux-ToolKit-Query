@@ -8,5 +8,11 @@
             "id": 3,
             "name": "Can Boz"
           }
-    ]
+    ],
+    "albums":
+    {
+      "userId": 3,
+      "title": "Eskişehir",
+      "id": 15
+    }
 }
